@@ -1,3 +1,6 @@
 rough.txt
 node_modules
 weekday.html
+npm-debug.log
+.DS_Store
+/*.env
