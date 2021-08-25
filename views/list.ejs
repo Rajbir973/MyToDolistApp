@@ -5,16 +5,19 @@
   <ul>
     <div class="box"> 
 
-     <% for(var i=0;i<newListItems.length;i++){ %>
+     <% newListItems.forEach(function(ele){ %>
+      <form  class="form"action="/delete" method="POST">
         <div class="item">
-            <input type="checkbox">
-            <p><%= newListItems[i] %></p>
+            <input type="checkbox" name="delItem" value="<%=ele._id%>" onchange="this.form.submit()">
+            <p><%= ele.name %></p>
         </div>
-     <%}%> 
+         <input type="hidden" name="hiddenItem" value="<%=listTitle%>"></input>
+      </form>  
+     <%})%> 
     
       <form class="form" action="/" method="post">
         <input type="text" name="additem" placeholder="new-item" autocomplete="off">
-        <button type="submit" name="list" value=<%=listTitle%>>+</button> 
+        <button type="submit" name="list" value="<%=listTitle%>">+</button> 
       </form>
     </div>  
 
