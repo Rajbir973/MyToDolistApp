@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 app.set("view engine","ejs");
 
-mongoose.connect("mongodb+srv://userDemo:rajbir@1234@cluster0.ekzp7.mongodb.net/todolistDB",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false})
+mongoose.connect("mongodb://localhost:27017node/todolistDB",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false})
 const itemsSchema={
     name:String
 };
@@ -192,7 +192,7 @@ app.post("/delete",function(req,res)
 })
 
 
-app.listen(process.env.PORT||3000,function(req,res)
+app.listen(3000,function(req,res)
 {
     console.log("hello i am working");
 }) ;  
